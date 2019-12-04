@@ -23,7 +23,7 @@ print(f"{len(data.keys())} contacts retrieved..")
 if(input("Do you want to see it[Y/N]: ").upper()=='Y'):
     print(data.keys())
 print()
-choice = int(input("In what form do you want\n1.JSON\n2.CSV\n>> "))
+choice = int(input("In what form do you want\n1.JSON\n2.VCF\n>> "))
 
 if(choice == 1):
     jconv.conv(data)
