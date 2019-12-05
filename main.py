@@ -1,4 +1,4 @@
-from conv_files import jconv,vcfconv
+from conv_files import jconv,vcfconv,icomb
 import pprint as pp
 
 data = {}
