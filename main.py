@@ -1,11 +1,16 @@
 from conv_files import jconv,vcfconv,icomb
 import pprint as pp
-
+import os
 data = {}
 
-#taking values from the csv file
-with open("decode/contacts.csv","r+") as csv: # change values to suite your file
-    csvlist=csv.readlines()
+while(1):
+    fpath = input("Drag and Drop the csv file here:>")
+    if(os.path.exists(fpath)):
+        with open(fpath,"r+") as csv:
+            csvlist=csv.readlines()
+            break
+    else:
+        print("Wrong Path..Try Again?")
 
 basevalues=csvlist[0].rstrip().split(',')
 
@@ -20,10 +25,28 @@ for datline in csvlist[1:]:
 
 print(f"{len(data.keys())} contacts retrieved..")
 
-if(input("Do you want to see it[Y/N]: ").upper()=='Y'):
-    print(data.keys())
+while(1):
+    ch = input("Do you want to see it[Y/N]: ")
+    if ch.upper()=='Y':
+        print(data.keys())
+        break
+    elif(ch.upper()!='N'):
+        print("Wrong Choice")
+    else:break
+
+
+
 print()
-choice = int(input("In what form do you want\n1.JSON\n2.VCF\n>> "))
+
+print("In what form do you want\n1.JSON\t2.VCF\n")
+while(1):
+    try:
+        choice = int(input(":> "))
+        if(choice == 1 or choice ==2):break
+        else:error
+    except:
+        print("Invalid Input\n")
+        continue
 
 if(choice == 1):
     jconv.conv(data)
