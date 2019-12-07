@@ -1,5 +1,4 @@
 from conv_files import jconv,vcfconv,icomb
-import pprint as pp
 import os
 data = {}
 
