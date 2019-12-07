@@ -2,7 +2,7 @@
 Helps you to ease up the migration process from Gcontacts to its AOSP varient
 
 ## Basic Function
-It converts the .csv file given by the Google contacts and converts it into .vcf or .json file format
+It converts the .csv file given by the Google contacts and converts it into .vcf for importing in AOSP contacts varient. You can also convert it to json too
 
 ## Prerequisites
 1. Python
